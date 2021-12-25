@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", 'MainController@index')->name('main');
-Route::get("/secured", 'MainController@secured')->name('secured')->middleware('btuauth');
+Route::post("/secured", 'MainController@secured')->name('secured')->middleware('btuauth');
 Route::get("/error", 'MainController@error')->name('error');
 

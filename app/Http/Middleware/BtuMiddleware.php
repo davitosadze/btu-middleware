@@ -16,12 +16,11 @@ class BtuMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->name == "Davit") {
-            return $next($request);
-        }
-        else {
+        if($request->name != "my-super-middleware") {
             return redirect("error");
         }
+
+        return $next($request);
         
     }
 }
